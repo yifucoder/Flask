@@ -2,9 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Flasko</title>
+    <!-- compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- Javascript library DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <!-- Javascript library DataTables -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ui.css') }}">
 </head>
 <body>
+<p class="title" align="center">Flask DataTables Demo</p>
 
+<div class="table-responsive">
+    <table id="mytable" class="table table-borded">
+        <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tfoot>
+        <thead class="thead-light">
+        <tr>
+            <th>column 1</th>
+            <th>column 2</th>
+            <th>column 3</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in wtform.tableForm %}
+        <tr>
+            <td>{{ item.column_1 }}</td>
+            <td>{{ item.column_2 }}</td>
+            <td>{{ item.column_3 }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 </body>
+<!-- Javascript library DataTables -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<!-- jQuery's slim build -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+
+<script type='text/javascript'>
+    $(document).ready(function() {
+        // create DataTable
+        var table = $('#mytable').DataTable({
+            dom: 'lrtpi'
+        });
+    }
+
+</script>
+
 </html>
