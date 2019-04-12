@@ -6,8 +6,7 @@ I am planning on hosting it on AWS ECS service.
 
 ## Hierarchy
 
-The directories are organized to correlate with guides found on developer.github.com.
-But here it is, broken down:
+Descriptions of the folders and the files in the repo:
 
 - Dockerfile: It contains all the commands to build a Docker image which includs Python, Flask and source code.
 - makefile: To build the image using Dockerfile.
